@@ -12,7 +12,7 @@ jobs:
       uses: actions/checkout@v4
 
     - name: Build Image
-      run: docker build -t homeautoapi:latest .
+      run: sudo docker build -t homeautoapi:latest .
 
     - name: Stop and Remove Existing Container
       run: |
@@ -21,4 +21,4 @@ jobs:
 
     - name: Run New Container
       run: |
-        sudo docker run -d --name homeautoapi -p 8080:8080 homeautoapi:latest --restart unless-stopped --env-file /opt/homeautoapi/.env homeautoapi:latest
+        sudo docker run -d --name homeautoapi --restart unless-stopped --env-file /opt/homeautoapi/.env -p 8080:8080 homeautoapi:latest
