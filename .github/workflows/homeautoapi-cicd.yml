@@ -8,8 +8,8 @@ jobs:
   build-image: 
     runs-on: averyonprem-ul
     steps: 
-    - uses: actions/checkout@v4
     - name: Checkout Code
+      uses: actions/checkout@v4
 
     - name: Build Image
       run: docker build -t homeautoapi:latest .
