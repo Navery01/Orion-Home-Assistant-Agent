@@ -6,7 +6,7 @@ on:
 
 jobs:
   build-image: 
-    runs-on: [self-hosted, averyonprem-ul]
+    runs-on: [self-hosted, Linux, X64]
     steps: 
     - name: Checkout Code
       uses: actions/checkout@v4
